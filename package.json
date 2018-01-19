@@ -1,6 +1,6 @@
 {
   "name": "transform-key",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converting object key is another key",
   "main": "index.js",
   "scripts": {

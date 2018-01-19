@@ -1,16 +1,16 @@
-# object-transform
+# transform-key
 
 Converting object key is another key
 
 ### example
 ```javascript
-let objectTransfrom = require('objet-transfrom')
+let transformKey = require('transform-key')
 let data = { old: 'string in old' }
 
-objectTransform({ old:'new' }, data)
+transformKey({ old:'new' }, data)
 // { new:'string in old' }
 
-objectTransform({ old:'new' }, data, true)
+transformKey({ old:'new' }, data, true)
 // { old:'string in old', new:'string in old' }
 ```
 
