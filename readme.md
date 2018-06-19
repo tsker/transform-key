@@ -2,6 +2,11 @@
 
 Converting object key is another key
 
+### install
+```javascript
+npm install transform-key
+```
+
 ### example
 ```javascript
 let transformKey = require('transform-key')
