@@ -9,18 +9,34 @@
  *
  * @return {object} new object
  */
-module.exports = function transformKey(keys, o, keepOld = false) {
-	let source = { ...o };
 
-	Object.keys(keys).forEach((oldKey) => {
-		let newKey = keys[oldKey];
-		if (!/string|number/.test(typeof newKey)) return;
-		source[newKey] = source[oldKey];
+function hasKey(o, key) {
+    return key in o
+}
 
-		if (!keepOld) {
-			delete source[oldKey];
-		}
-	});
+module.exports = function transformKey(o, keys, keepOld = false) {
+    let result = { ...o }
 
-	return source;
+    Object.keys(keys).forEach((oldKey) => {
+
+        if (!hasKey(result, oldKey)) {
+            return
+        }
+
+        let newKey = keys[oldKey];
+
+        if (typeof newKey === 'function') {
+            newKey = newKey(oldKey)
+        }
+
+        if (!/string|number/.test(typeof newKey)) return;
+
+        result[newKey.toString()] = result[oldKey];
+
+        if (!keepOld) {
+            delete result[oldKey];
+        }
+    });
+
+    return result;
 };

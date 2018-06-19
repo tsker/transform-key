@@ -12,6 +12,13 @@ transformKey({ old:'new' }, data)
 
 transformKey({ old:'new' }, data, true)
 // { old:'string in old', new:'string in old' }
+
+function parseString(oldKey): string | number{
+    console.log(oldKey) // old
+    return 'new'
+}
+transformKey({ old: parseString }, data, true)
+// { old:'string in old', new:'string in old' }
 ```
 
 
