@@ -7,17 +7,17 @@ Converting object key is another key
 let transformKey = require('transform-key')
 let data = { old: 'string in old' }
 
-transformKey(data, { old:'new' })
+transformKey({ old:'new' }, data)
 // { new:'string in old' }
 
-transformKey(data, { old:'new' }, true)
+transformKey({ old:'new' }, data, true)
 // { old:'string in old', new:'string in old' }
 
 function parseString(oldKey): string | number{
     console.log(oldKey) // old
     return 'new'
 }
-transformKey(data, { old: parseString }, true)
+transformKey({ old: parseString }, data, true)
 // { old:'string in old', new:'string in old' }
 ```
 

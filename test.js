@@ -12,36 +12,38 @@ let o2 = {
     new: 'my in o-key::a'
 };
 
-let transform = transformKey(o, {
+let transform = transformKey({
     old: 'new'
-});
+}, o);
 let result = [transform, o1].map(JSON.stringify);
 assert.equal(...result);
 console.log('ok');
 
 
-let transform2 = transformKey(o, {
+let transform2 = transformKey({
     old: 'new'
-}, true);
+}, o, true);
 let result2 = [transform2, o2].map(JSON.stringify);
 assert.equal(...result2);
 console.log('ok');
 
-let transform3 = transformKey(o, {
+let transform3 = transformKey({
     old() {
         return 'n' + 'e' + 'w'
     }
-}, true);
+}, o, true);
 let result3 = [transform3, o2].map(JSON.stringify);
 assert.equal(...result3);
 console.log('ok');
 
 
-let transform4 = transformKey(o, {
+
+// error test
+let transform4 = transformKey({
     old() {
         return 'n' + 'e' + 'w' + '1'
     }
-}, true);
+}, o, true);
 let result4 = [transform4, o2].map(JSON.stringify);
 assert.equal(...result4);
 console.log('ok');

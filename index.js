@@ -14,7 +14,7 @@ function hasKey(o, key) {
     return key in o
 }
 
-module.exports = function transformKey(o, keys, keepOld = false) {
+module.exports = function transformKey(keys, o, keepOld = false) {
     let result = { ...o }
 
     Object.keys(keys).forEach((oldKey) => {
