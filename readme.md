@@ -1,6 +1,6 @@
 # transform-key
 
-Converting object key is another key
+Converting object key to another key
 
 ### install
 ```javascript
