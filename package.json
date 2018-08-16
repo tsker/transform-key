@@ -1,17 +1,18 @@
 {
     "name": "transform-key",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "Converting object key to another key",
     "main": "index.js",
     "scripts": {
         "test": "node test.js"
     },
     "keywords": ["object", "transform", "convert", "key"],
-    "author": "",
+    "author": "tsker",
     "license": "ISC",
     "files": [
         "index.js"
     ],
+    "homepage": "https://github.com/tsker/transform-key",
     "bugs": {
         "url": "https://github.com/tsker/transform-key/issues"
     }

@@ -29,8 +29,6 @@ module.exports = function transformKey(keys, o, keepOld = false) {
             newKey = newKey(oldKey)
         }
 
-        if (!/string|number/.test(typeof newKey)) return;
-
         result[newKey.toString()] = result[oldKey];
 
         if (!keepOld) {

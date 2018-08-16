@@ -7,6 +7,17 @@ Converting object key to another key
 npm install transform-key
 ```
 
+### params
+```javascript
+let transformKey = require('transform-key')
+
+transformKey(
+    keys,    /* @{object} keys map */
+    o,       /* @{object} source object */
+    keepOld  /* @{bool}   keep old key */
+)
+```
+
 ### example
 ```javascript
 let transformKey = require('transform-key')
